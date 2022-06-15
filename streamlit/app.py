@@ -5,7 +5,7 @@ from PIL import Image
 
 # Custom imports 
 from multipage import MultiPage
-from pages import pre_mainpage, mainpage, create_lobby, select_lobby, delete_lobby, create_race_game, create_gymkhana_game, create_stagerace_config, create_pre_stagerace_game, create_stagerace_game, select_race, delete_race, racedisplay, stage_racedisplay, download_race, remove_player_from_race # import your pages here
+from pages import pre_mainpage, mainpage, create_lobby, select_lobby, delete_lobby, create_race_game, create_gymkhana_game, create_stagerace_config, create_pre_stagerace_game, create_stagerace_game, select_race, delete_race, racedisplay, stage_racedisplay, download_race, download_stagerace, remove_player_from_race, remove_player_from_stage_part1, remove_player_from_stage_part2, reset_stage # import your pages here
 
 def _max_width_(prcnt_width:int = 75):
     max_width_str = f"max-width: {prcnt_width}%;"
@@ -123,11 +123,13 @@ if __name__ == '__main__':
     app.add_page("delete_race", delete_race.app)
     app.add_page("racedisplay", racedisplay.app)
     app.add_page("download_race", download_race.app)
+    app.add_page("download_stagerace", download_stagerace.app)
     app.add_page("remove_player_from_race", remove_player_from_race.app)
+    app.add_page("remove_player_from_stage_part1", remove_player_from_stage_part1.app)
+    app.add_page("remove_player_from_stage_part2", remove_player_from_stage_part2.app)
+    app.add_page("reset_stage", reset_stage.app)
 
     print(app.pages)
 
     # The main app
     app.run()
-
-
